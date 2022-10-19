@@ -3,6 +3,10 @@
 
 # 6개의 숫자를 담을 list 생성
 
+import email
+from re import M
+
+
 my_lotto_numbers = list()
 
 # 6번 숫자를 입력 : for
@@ -37,3 +41,32 @@ for i in range(6):
             # 범위 검사 탈락시 안내문구
             print('1~45의 값만 입력 가능합니다.')
             # 다시 입력 시킨다 => 무한반복 유지 => break X
+
+# 입력한 숫자 목록 확인
+print(f'내 숫자 목록 : {my_lotto_numbers}')
+
+# 숫자 목록을 작은 수 ~ 큰 수로 정렬. (sort)
+
+# bubble sort 구현해보기
+
+# 2개씩 짝지어 비교 => 순서가 잘못됬으면 서로 위치 변경 => 통째로 6번 반복
+
+# 총 6개의 숫자를 모두 뽑아서 확인
+for idx, val in enumerate(my_lotto_numbers):
+    
+    # 2개씩 뽑아서 비교
+    for j in range(5):
+        # 5회반복시 : 0,1번 비교> 1,2번 비교... 4,5번 비교에서 마무리
+
+        # 순서가 잘못되었나? 앞의 숫자가 더 큰가?
+        if my_lotto_numbers[j] > my_lotto_numbers[j+1] :
+            # 두 자료의 위치를 변경
+            # 두 변수의 위치 바꿔주기
+
+            backup = my_lotto_numbers[j]
+            my_lotto_numbers[j] = my_lotto_numbers[j+1]
+            my_lotto_numbers[j+1] = backup
+# 정렬 되었는지?
+
+print(my_lotto_numbers)            
+
