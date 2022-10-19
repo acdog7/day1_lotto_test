@@ -5,6 +5,7 @@
 
 import email
 from re import M
+from random import random
 
 
 my_lotto_numbers = list()
@@ -70,3 +71,17 @@ for idx, val in enumerate(my_lotto_numbers):
 
 print(my_lotto_numbers)            
 
+# CPU가 숫자 6개 당첨 작업
+# 1~45의 범위 + 중복 X.
+
+# 당첨번호 목록
+win_number_list =list()
+
+# 6개의 숫자를 뽑자.
+
+for i in range(6):
+    # 사용할 수 있는 번호가 나올때까지 무한 반복
+    while True :
+        # random.random() => 0.0 ~ 0.99999999999의 랜덤값 출현
+        rand_num = random()
+        print(rand_num)
