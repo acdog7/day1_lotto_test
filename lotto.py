@@ -83,5 +83,10 @@ for i in range(6):
     # 사용할 수 있는 번호가 나올때까지 무한 반복
     while True :
         # random.random() => 0.0 ~ 0.99999999999의 랜덤값 출현
-        rand_num = random()
-        print(rand_num)
+        
+        # 1 <= int(랜덤값*45+1) < 46   1~45의 값으로 바꾸자.
+
+        rand_num = int(random() * 45 +1)
+        
+        
+        # 뽑을때부터 1~45이므로, 범위 검사 필요 X.
