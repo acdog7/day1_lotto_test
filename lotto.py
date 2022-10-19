@@ -25,11 +25,14 @@ for i in range(6):
         # input_num이 my_lott_num 안에 포함되어있는가?
         is_duplicated = input_num in my_lotto_numbers
 
-        if is_range_ok : 
+        if is_range_ok and (not is_duplicated): 
             # 검사 통과시 무한반복 종료
             # 입력값을, 내 로또 번호로 등록 => 중복검사에도 활용 가능
             my_lotto_numbers.append( input_num )
             break
+        elif is_duplicated:
+            # 중복검사에서 탈락됨
+            print('이미 등록된 숫자 입니다.')
         else :
             # 범위 검사 탈락시 안내문구
             print('1~45의 값만 입력 가능합니다.')
