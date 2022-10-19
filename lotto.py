@@ -6,7 +6,7 @@
 import email
 from operator import is_
 from re import M
-from random import random
+from random import randint, random
 
 
 my_lotto_numbers = list()
@@ -107,12 +107,30 @@ print(f'당첨 번호 : {win_number_list}')
 
 win_number_list.sort()
 
-# 임시 처리 : 당첨번호를 고정해둬야 테스트 하기 편하다.
+# 당첨번호 6개 생성 이후, 보너스번호 하나 추가 생성
+# 기존 당첨번호와 중복되면 안됨.
+
+while True : 
+    # 1~45의 랜덤을 쉽게 뽑는 방법?
+    rand_num = randint(1, 45)
+
+    is_already_num = rand_num in win_number_list
+
+    if not is_already_num :
+        # 보너스번호로 등록
+        # 무한반복 종료
+        bonus_num = rand_num
+        break
+
+
+# 임시 처리 : 당첨번호 / 보너스번호를 고정해둬야 테스트 하기 편하다.
 
 win_number_list = [10,15,20,25,30,35]
+bonus_num = 40
 
 print(win_number_list)
 
+print(bonus_num)
 # 내 번호 목록 / 당첨 번호 목록 중 같은 갯수?
 
 correct_count = 0
