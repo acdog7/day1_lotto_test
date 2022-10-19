@@ -102,3 +102,9 @@ for i in range(6):
             break
 
 print(f'당첨 번호 : {win_number_list}')
+
+# 당첨 번호도 순서대로 정리 - 파이썬 제공 기능 활용
+
+win_number_list.sort()
+
+print(win_number_list)
