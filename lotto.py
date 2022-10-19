@@ -4,6 +4,7 @@
 # 6개의 숫자를 담을 list 생성
 
 import email
+from operator import is_
 from re import M
 from random import random
 
@@ -90,3 +91,14 @@ for i in range(6):
         
         
         # 뽑을때부터 1~45이므로, 범위 검사 필요 X.
+
+        # 당첨번호 목록에 있는지? => 중복인가?
+        is_duplicated = random in win_number_list
+
+        # 중복이 아니면 목록에 등록, 다음 숫자 뽑으러.
+
+        if not is_duplicated:
+            win_number_list.append(rand_num)
+            break
+
+print(f'당첨 번호 : {win_number_list}')
