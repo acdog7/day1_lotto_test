@@ -20,8 +20,15 @@ for i in range(6):
         # 1 <= 입력값 and 입력값 <= 45
         is_range_ok = (1<= input_num) and (input_num <= 45)
 
+        # 무한반복 종료 조건 2. 이미 등록한 번호가 아니어야 함.
+        # 중복인가? 내 로또 번호에 이미, 입력값이 들어있는가?
+        # input_num이 my_lott_num 안에 포함되어있는가?
+        is_duplicated = input_num in my_lotto_numbers
+
         if is_range_ok : 
             # 검사 통과시 무한반복 종료
+            # 입력값을, 내 로또 번호로 등록 => 중복검사에도 활용 가능
+            my_lotto_numbers.append( input_num )
             break
         else :
             # 범위 검사 탈락시 안내문구
