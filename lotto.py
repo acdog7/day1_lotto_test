@@ -107,6 +107,10 @@ print(f'당첨 번호 : {win_number_list}')
 
 win_number_list.sort()
 
+# 임시 처리 : 당첨번호를 고정해둬야 테스트 하기 편하다.
+
+win_number_list = [10,15,20,25,30,35]
+
 print(win_number_list)
 
 # 내 번호 목록 / 당첨 번호 목록 중 같은 갯수?
