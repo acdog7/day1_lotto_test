@@ -4,9 +4,10 @@
 # 6개의 숫자를 담을 list 생성
 
 import email
+from genericpath import samefile
 from operator import is_
 from re import M
-from random import randint, random
+from random import randint, random, sample
 
 
 my_lotto_numbers = list()
@@ -75,31 +76,9 @@ print(my_lotto_numbers)
 # CPU가 숫자 6개 당첨 작업
 # 1~45의 범위 + 중복 X.
 
-# 당첨번호 목록
-win_number_list =list()
+# 파이썬의 sample 기능 활용 random 추출 / 6개 중복 X
+win_number_list = sample (range(1, 46), 6)
 
-# 6개의 숫자를 뽑자.
-
-for i in range(6):
-    # 사용할 수 있는 번호가 나올때까지 무한 반복
-    while True :
-        # random.random() => 0.0 ~ 0.99999999999의 랜덤값 출현
-        
-        # 1 <= int(랜덤값*45+1) < 46   1~45의 값으로 바꾸자.
-
-        rand_num = int(random() * 45 +1)
-        
-        
-        # 뽑을때부터 1~45이므로, 범위 검사 필요 X.
-
-        # 당첨번호 목록에 있는지? => 중복인가?
-        is_duplicated = rand_num in win_number_list
-
-        # 중복이 아니면 목록에 등록, 다음 숫자 뽑으러.
-
-        if not is_duplicated:
-            win_number_list.append(rand_num)
-            break
 
 print(f'당첨 번호 : {win_number_list}')
 
@@ -125,8 +104,8 @@ while True :
 
 # 임시 처리 : 당첨번호 / 보너스번호를 고정해둬야 테스트 하기 편하다.
 
-win_number_list = [10,15,20,25,30,35]
-bonus_num = 40
+# win_number_list = [10,15,20,25,30,35]
+# bonus_num = 40
 
 print(win_number_list)
 
